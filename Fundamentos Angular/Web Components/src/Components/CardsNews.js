@@ -8,7 +8,144 @@ class CardNews extends HTMLElement {
 			this.buildCardLeft(),
 			this.buildCardRight()
 		);
+
+		var style = this.styles();
 		shadow.appendChild(build);
+
+		shadow.appendChild(style);
+	}
+
+	styles() {
+		const style = document.createElement("style");
+		style.textContent = `* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", sans-serif;
+        }
+        
+        html,
+        body {
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #e4e3e2;
+        }
+        
+        
+        
+        a {
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 2rem;
+            color: #000;
+        }
+        
+        .author {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-bottom: 0.8rem;
+        }
+        
+        .foto {
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            background-color: black;
+            margin-right: 0.5rem;
+        }
+        
+        .card {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            margin: 1rem 0;
+            border-radius: 2px;
+            width: 65vw;
+            max-width: fit-content;
+            min-width: min-content;
+            flex-wrap: wrap;
+            background-color: #f0f8ff;
+            transition: transform 0.2s;
+        }
+        
+        .card:hover {
+            transform: scale(1.005);
+
+            box-shadow: 2px 3px 5px rgb(211, 210, 210);
+        }
+        
+        .card__left {
+            justify-content: space-between;
+            align-items: center;
+            flex: 1;
+            margin-inline: 1rem;
+            margin-bottom: 1rem;
+            min-height: 100%;
+            width: 60vw;
+        }
+        
+        .resume {
+            color: #00000070;
+        }
+        
+        .content__card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+        
+        .card__footer,
+        .content__info {
+            display: flex;
+            flex-direction: row;
+        }
+        
+        .card__footer {
+            font-size: 14px;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 0.8rem;
+            max-width: 95%;
+        }
+        
+        .card__footer > .content__info {
+            width: 80%;
+            justify-content: left;
+        }
+        
+        .content__info > .time,
+        .magazine {
+            margin-inline: 0.3rem;
+        }
+        
+        .icon {
+            margin-right: 2.5rem;
+        }
+        
+        .magazine {
+            border-radius: 8px;
+            padding-inline: 0.4em;
+            background-color: #0000002c;
+        }
+        
+        .card__rigth,
+        img {
+            display: flex;
+            justify-content: center;
+        }
+        .image{
+            height: 200px;
+            min-width: fit-content;
+        }
+        `;
+
+		return style;
 	}
 
 	buildComponent(left, rigth) {
@@ -25,7 +162,8 @@ class CardNews extends HTMLElement {
 		cardRigth.setAttribute("class", "card__rigth");
 
 		const image = document.createElement("img");
-		image.setAttribute("class", "icon resume");
+		image.setAttribute("class", "image");
+		image.src = this.getAttribute("img") || "src/assets/foto-default.jpg";
 
 		cardRigth.appendChild(image);
 
@@ -44,7 +182,7 @@ class CardNews extends HTMLElement {
 
 		const nameAuthor = document.createElement("span");
 		nameAuthor.textContent =
-			"By" + (this.getAttribute("nameAuthor") || "Anonymous");
+			"By " + (this.getAttribute("nameAuthor") || "Anonymous");
 		nameAuthor.setAttribute("class", "nameAuthor");
 
 		author.appendChild(photo);
@@ -58,6 +196,7 @@ class CardNews extends HTMLElement {
 
 		const anchor = document.createElement("a");
 		anchor.setAttribute("class", "linkTitle");
+		anchor.href = "";
 		anchor.textContent = this.getAttribute("linkTitle");
 
 		const resume = document.createElement("p");
@@ -91,6 +230,7 @@ class CardNews extends HTMLElement {
 
 		const iconResume = document.createElement("img");
 		iconResume.setAttribute("class", "icon resume");
+		iconResume.alt = "icon";
 
 		cardFooter.appendChild(contentInfo);
 		cardFooter.appendChild(iconResume);
