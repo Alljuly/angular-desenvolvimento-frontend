@@ -5,9 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal de Notícias Galáctico</title>
     <link rel="stylesheet" href="./src/styles/style.css">
+    <script  src="src/Components/CardsNews.js" defer> </script>
+    <script  src="src/Components/Title.js" defer> </script>
 </head>
 <body>
     <div class="container">
+        <title-dynamic title="Notícias"> </title-dynamic>
+
         <div class="card">
             <div class="card__left">
                 <div class="author">
@@ -21,9 +25,9 @@
                     </div>
                     <div class="card__footer">
                         <div class="content__info">
-                            <p class="date resume">Jan 14</p>
-                            <p class="time resume">3 min read</p>
-                            <p class="magazine resume">Imperio News</p>
+                            <p class="date resume">Jan 14 </p>
+                            <p class="time resume"> 3 min read </p>
+                            <p class="magazine resume"> Imperio News </p>
                         </div>
                         <div class="icon resume">oi</div>
                     </div>
@@ -33,6 +37,10 @@
                 <img src="./src/assets/asset-vader.png" height="100%">
             </div>
         </div>
-    </div>
+        <card-news></card-news>
+
+    </div>  
+ 
+
 </body>
 </html>
