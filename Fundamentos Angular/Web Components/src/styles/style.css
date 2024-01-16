@@ -19,6 +19,8 @@ html, body{
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin-bottom: 0.8rem;
+
 }
 
 .foto {
@@ -29,30 +31,84 @@ html, body{
     margin-right: 0.5rem;
 }
 
+
+.container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem;
+    justify-content: space-around;
+    background-color: #f0f8ff;
+    border-radius: 2px;
+    box-shadow: 5px 5px 5px rgb(97, 94, 94);
+    flex-wrap: wrap;
+}
+
 .card {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    background-color: #f0f8ff;
-    padding: 1rem;
+    justify-content: space-around;
+
     border-radius: 2px;
-    max-width: 65vw;
-}
+    max-width: 900px;
+    flex-wrap: wrap;
+
+}   
 
 .card__left {
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
     margin-inline: 1rem;
-}
-
-.card__left > h1 {
-    margin-top: 0.8rem;
+    margin-bottom: 1rem;
 }
 
 
 .card__left {
-    margin: 1rem;
+    min-height: 100%;
 }
 
 .resume {
-    color:#00000056
+    color:#00000070
 }
+
+.content__card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; 
+}
+
+.card__footer, .content__info{
+    display: flex;
+    flex-direction: row;
+}
+
+.card__footer{
+    font-size: 14px;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: .8rem;
+}
+
+.card__footer > .content__info {
+    width: 100%;
+    justify-content: left; 
+}
+
+.content__info > .time, .magazine{
+    margin-inline: 0.3rem;
+}
+
+.icon {
+    margin-right: 2.5rem;
+}
+
+.magazine {
+    border-radius: 8px;
+    padding-inline: 0.4em;
+    background-color: #0000002c;
+}
+
+
