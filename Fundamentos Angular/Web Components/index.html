@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Portal de Notícias Galáctico</title>
+		<link rel="stylesheet" href="./src/styles/style.css" />
+		<script src="src/Components/CardsNews.js" defer></script>
+		<script src="src/Components/Title.js" defer></script>
+	</head>
+	<body>
+		<div class="container">
+			<title-dynamic title="Portal Vênus"> </title-dynamic>
+
+			<card-news
+				nameAuthor="Alice"
+				linkTitle="Darth Vader Contrata DEVs"
+				resume="Lord Vader anuncia que está a procura de novos funcionários, e é
+				pré-requisito saber trabalhar com componentização"
+				date="Jan 14"
+				time="3 min read"
+				magazine="Imperio News"
+				img="./src/assets/asset-vader.png"
+			></card-news>
+			<card-news
+				nameAuthor="Yoda"
+				linkTitle="Commitar você deve"
+				resume="Commit, young Padawan. Git mastery, a path to the Force it is."
+				date="Out 15"
+				time="5 min read"
+				img="./src/assets/yoda_starwars.jpg"
+				magazine="StarsPaper"
+			></card-news>
+		</div>
+	</body>
+</html>
